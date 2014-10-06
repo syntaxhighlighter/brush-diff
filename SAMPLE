@@ -1,0 +1,91 @@
+--- ...\index.php-rev104.svn000.tmp.php   2008-10-13 20:34:44.000000000 -0300
++++ ...\index.php 2008-10-13 16:31:46.000000000 -0300
+@@ -90,36 +90,34 @@
+         \$url .= \$arg;
+     }
+         
+     return \$url;
+ }
+  
+-//<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+-//<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01//EN" "http://www.w3.org/TR/html4/strict.dtd">
+ ?>
+-<!DOCTYPE html
+-     PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN"
+-     "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
++<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+ <html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" lang="en">
+ <head>
+ <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+ <title>SyntaxHighlighter</title>
+ <link type="text/css" rel="stylesheet" href="Styles/shCore.css"/>
+ <link type="text/css" rel="stylesheet" href="Styles/shTheme<?= \$current_theme ?>.css"/>
+ <link href="Styles/TestPages.css" rel="stylesheet" type="text/css"/>
+ </head>
+  
+ <body>
+  
+- <!--
+-<pre class="brush: c#">
+-/** test */
+- hello
+-</pre>
+-<h1>SyntaxHighlighter 2.0</h1>
+-<p><a href="http://code.google.com/p/syntaxhighlighter/">http://code.google.com/p/syntaxhighlighter/</a></p>
+--->
++<script type="text/javascript" src="Scripts/shCore.js"></script>
++<? foreach (\$brushes as \$brush => \$label) : ?>
++<script type="text/javascript" src="Scripts/shBrush<?= \$brush ?>.js"></script>
++<? endforeach; ?>
++<script type="text/javascript">
++//<!--
++var syntaxHighlighterConfig = {};
++//-->
++</script>
++
+ <h2><?= \$title ?></h2>
+  
+ <div class="layout">
+  
+  <select onchange="setTheme(this)" size="1">
+  <? foreach (\$themes as \$theme => \$label) : ?>
+@@ -166,16 +164,11 @@
+  <div class="footer">
+      Copyright 2004-2008 Alex Gorbatchev.<br/>
+  </div>
+   
+ </div>
+  
+-<script type="text/javascript" src="Scripts/shCore.js"></script>
+-<? foreach (\$brushes as \$brush => \$label) : ?>
+-<script type="text/javascript" src="Scripts/shBrush<?= \$brush ?>.js"></script>
+-<? endforeach; ?>
+  
+ <script type="text/javascript">
+ //<!--
+ function themeUrl(value)
+ {
+     return url("theme", value);
+@@ -202,20 +195,14 @@
+  
+ function setTheme(sender)
+ {
+     window.location = themeUrl(sender.options[sender.selectedIndex].value);
+ }
+  
+-if(window.isBloggerMode == true)
+-    SyntaxHighlighter.BloggerMode();
+  
+-SyntaxHighlighter.ClipboardSwf = 'Scripts/clipboard.swf';
++syntaxHighlighterConfig.clipboardSwf = 'Scripts/clipboard.swf';
+  
+-window.onload = function()
+-{
++
+  SyntaxHighlighter.highlight();
+-}
+ //-->
+ </script>
+  
+ </body>
+ </html>
