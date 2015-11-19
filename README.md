@@ -1,6 +1,6 @@
 # syntaxhighlighter/brush-diff
 
-diff brush module for [SyntaxHighlighter](https://github.com/syntaxhighlighter).
+Diff/patch brush module for [SyntaxHighlighter](https://github.com/syntaxhighlighter).
 
 [![Build Status](https://travis-ci.org/alexgorbatchev/brush-diff.svg)](https://travis-ci.org/alexgorbatchev/brush-diff)
 
