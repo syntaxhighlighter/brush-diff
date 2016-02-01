@@ -1,5 +1,5 @@
 {
-  "name": "brush-diff",
+  "name": "@alexgorbatchev/brush-diff",
   "version": "4.0.0",
   "description": "diff brush module for SyntaxHighlighter.",
   "keywords": [
