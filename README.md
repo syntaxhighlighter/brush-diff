@@ -2,11 +2,11 @@
 
 Diff/patch brush module for [SyntaxHighlighter](https://github.com/syntaxhighlighter).
 
-[![Build Status](https://travis-ci.org/alexgorbatchev/brush-diff.svg)](https://travis-ci.org/alexgorbatchev/brush-diff)
+[![Build Status](https://travis-ci.org/syntaxhighlighter/brush-diff.svg)](https://travis-ci.org/syntaxhighlighter/brush-diff)
 
 ## Installation
 
-    npm install syntaxhighlighter/brush-diff
+    npm install @alexgorbatchev/brush-diff
 
 ## Testing
 
